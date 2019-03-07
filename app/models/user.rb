@@ -12,4 +12,6 @@ class User < ApplicationRecord
         errors.add(:email, :invalid) unless email.match(EMAIL_REGEXP)
     end
 
+    has_secure_password
+
 end
