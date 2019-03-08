@@ -6,18 +6,29 @@ pt-BR:
     edit:
       title: Editar Perfil
     show:
-      title: "Perfil:	%{user_name}"
-      edit: 'Editar	Perfil'
-      location: "Localização:	%{location}"
-      bio: "Biografia:	%{bio}"
+      title: "Perfil: %{user_name}"
+      edit: 'Editar Perfil'
+      location: "Localização: %{location}"
+      bio: "Biografia: %{bio}"
   rooms:
     new:
       title: Cadastro
     edit:
       title: Editar Quarto
+  signup:
+    confirm_email:
+      subject: 'Colcho.net - Confirme seu email'
+      title: 'Seja bem vindo ao Colcho.net!'
+      body: |
+        Seja bem vindo ao Colcho.net, %{full_name}.
+        O Colcho.net é o lugar ideal para você alugar aquele quarto sobrando na sua casa e ainda conhecer gente do mundo inteiro
+      confirm_link_html: 'Para você começar a usar o site, acesseo link: %{link}'
+      thanks_html: 'Obrigado por se cadastrar no %{link}.'
   links:
     back: Voltar
     show: Mostrar
+  confirmations:
+    success: Email confirmado com sucesso, obrigado!
   layout:
     rooms: Quartos
     signup: Cadastro
