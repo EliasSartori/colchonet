@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     EMAIL_REGEXP = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
+    scope :confirmed, -> { where.not(confirmed_at: nil) }
 
     validates :email,        presence: true, uniqueness: true, format: EMAIL_REGEXP
     validates :full_name,    presence: true
@@ -21,5 +22,11 @@ class User < ApplicationRecord
 
     def confirmed?
         confirmed_at.present?
+    end
+
+    def	self.authenticate(email, password)
+        user = confirmed.
+                find_by(email: email).
+                try(:authenticate, password)
     end
 end
