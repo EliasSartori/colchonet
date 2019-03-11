@@ -35,7 +35,11 @@ pt-BR:
     success: Email confirmado com sucesso, obrigado!
   layout:
     rooms: Quartos
+    new_room: Cadastre seu quarto!
     signup: Cadastro
+    signin: Entrar
+    signout: Sair
+    my_profile: Meu perfil
   flash:
     alert:
       needs_login: "Você precisa estar logado para continuar"
