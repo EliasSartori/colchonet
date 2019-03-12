@@ -6,7 +6,7 @@ class RoomPresenter
     Room.model_name
   end
 
-  def initialize(room, context, show_form)
+  def initialize(room, context, show_form=true)
     @context = context
     @room = room
     @show_form = show_form
@@ -21,7 +21,7 @@ class RoomPresenter
   end
 
   def review
-      @review ||= @room.reviews.find_or_initialize_by(user_id: @context.current_user.id)
+    @review ||= @room.reviews.find_or_initialize_by(user_id: @context.current_user.id)
   end
 
   def review_route
@@ -36,18 +36,18 @@ class RoomPresenter
     Review::POINTS
   end
 
+  # Faz com que a partial 'room' seja renderizada quando chamamos o 'render'
+  # com o objeto da classe room presenter.
+  def to_partial_path
+    'room'
+  end
+
   def stars
     @room.reviews.stars
   end
 
   def total_reviews
     @room.reviews.size
-  end
-
-  # Faz com que a partial 'room' seja renderizada quando chamamos o 'render'
-  # com o objeto da classe room presenter.
-  def to_partial_path
-    'room'
   end
 
   def picture_url
@@ -61,13 +61,4 @@ class RoomPresenter
   def has_picture?
     @room.picture?
   end
-
-  def stars
-    @room.reviews.stars
-  end
-  
-  def total_reviews
-      @room.reviews.size
-  end
 end
-  

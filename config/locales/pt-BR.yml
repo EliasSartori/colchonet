@@ -21,6 +21,9 @@ pt-BR:
       title: Editar Quarto
     index:
       title: 'Quartos disponíveis'
+      search_results: 'Resultados da busca'
+    search:
+      search_for: 'Buscar por...'
     room:
       owner_html: '&mdash; %{owner} (%{when})'
       edit: 'Editar'
@@ -31,7 +34,7 @@ pt-BR:
       stats:
         zero: 'Não há avaliações'
         one: '(1 avaliação)'
-        other: _rev'(%{count} avaliações)'
+        other: '(%{count} avaliações)'
   signup:
     confirm_email:
       subject: 'Colcho.net - Confirme seu email'
@@ -59,7 +62,8 @@ pt-BR:
     notice:
       signed_in: 'Login efetuado com sucesso!'
       signed_out: 'Logout efetuado com sucesso. Até logo!'
-      already_logged_in: "Você já está logado."
+      allready_logged_in: "Você já está logado."
+      room_created: "Quarto criado"
   general:
     form_error: Há erros no formulário, por favor verifique.
   activerecord:
@@ -68,6 +72,7 @@ pt-BR:
         description: Descrição
         location: Localização
         title: Título
+        picture: Foto
       user:
         bio: Biografia
         email: Email
@@ -93,3 +98,10 @@ pt-BR:
         create: "Entrar"
   dialogs:
     destroy: 'Você tem certeza que quer remover?'
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Próxima &rsaquo;"
+      truncate: "..."

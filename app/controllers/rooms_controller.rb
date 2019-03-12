@@ -1,14 +1,15 @@
 class RoomsController < ApplicationController
   before_action :require_authentication, only: [:new, :edit, :create, :update, :destroy]
+  PER_PAGE = 3
 
   def index
-    @rooms = Room.most_recent.map do |room|
-      RoomPresenter.new(room, self, false)
-    end
+    @search_query = params[:q]
+    rooms = Room.search(@search_query).page(params[:page]).per(PER_PAGE)
+    @rooms = RoomCollectionPresenter.new(rooms.most_recent, self)
   end
 
   def show
-    room_model = Room.find(params[:id])
+    room_model = Room.friendly.find(params[:id])
     @room = RoomPresenter.new(room_model, self)
   end
 
@@ -17,7 +18,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
   end
 
   def create
@@ -31,7 +32,7 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @room = current_user.rooms.find(params[:id])
+    @room = current_user.rooms.friendly.find(params[:id])
     if @room.update(room_params)
       redirect_to @room, notice: t('flash.notice.room_updated')
     else
@@ -40,16 +41,16 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-      @room = current_user.rooms.find(params[:id])
-      @room.destroy
+    @room = current_user.rooms.friendly.find(params[:id])
+    @room.destroy
 
-      redirect_to rooms_url
+    redirect_to rooms_url
   end
 
   private
     def room_params
       params.
         require(:room).
-        permit(:title, :location, :description)
+        permit(:title, :location, :description, :picture)
     end
 end

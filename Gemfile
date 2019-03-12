@@ -32,8 +32,12 @@ gem 'webpacker'
 #JQuery Gem
 gem 'jquery-rails'
 
-gem	"font-awesome-rails"
-
+gem "font-awesome-rails"
+gem 'material_icons'
+gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'master'
+gem 'kaminari'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
