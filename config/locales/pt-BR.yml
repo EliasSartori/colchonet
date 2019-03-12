@@ -19,6 +19,14 @@ pt-BR:
       title: Cadastro
     edit:
       title: Editar Quarto
+    index:
+      title: 'Quartos disponíveis'
+    room:
+      owner_html: '&mdash; %{owner} (%{when})'
+      edit: 'Editar'
+      destroy: 'Remover'
+    review:
+      login_to_review: Faça o login para avaliar quartos
   signup:
     confirm_email:
       subject: 'Colcho.net - Confirme seu email'
@@ -65,6 +73,7 @@ pt-BR:
     models:
       room: Quarto
       user: Usuário
+      review: Avaliação
   activemodel:
     attributes:
      user_session:
@@ -77,3 +86,5 @@ pt-BR:
     submit:
       user_session:
         create: "Entrar"
+  dialogs:
+    destroy: 'Você tem certeza que quer remover?'
