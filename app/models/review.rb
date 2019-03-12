@@ -6,4 +6,8 @@ class Review < ApplicationRecord
 
   validates :user_id, uniqueness: {scope: :room_id}
   validates :points, presence: true, inclusion: { in: POINTS}
+
+  def self.stars
+    (average(:points) || 0).round
+  end
 end

@@ -25,8 +25,13 @@ pt-BR:
       owner_html: '&mdash; %{owner} (%{when})'
       edit: 'Editar'
       destroy: 'Remover'
+    review_form:
+      login_to_review: 'Faça o login para avaliar quartos'
     review:
-      login_to_review: Faça o login para avaliar quartos
+      stats:
+        zero: 'Não há avaliações'
+        one: '(1 avaliação)'
+        other: _rev'(%{count} avaliações)'
   signup:
     confirm_email:
       subject: 'Colcho.net - Confirme seu email'

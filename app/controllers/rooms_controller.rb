@@ -3,11 +3,7 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = Room.most_recent.map do |room|
-      if room.user_id == current_user.id
-        RoomPresenter.new(room, self, false)
-      else
-        RoomPresenter.new(room, self, true)
-      end
+      RoomPresenter.new(room, self, false)
     end
   end
 

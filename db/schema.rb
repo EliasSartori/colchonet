@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2019_03_11_175059) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "reviews", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
+    t.bigint "user_id"
+    t.bigint "room_id"
     t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_175059) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "reviews_count"
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
@@ -47,4 +50,5 @@ ActiveRecord::Schema.define(version: 2019_03_11_175059) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "rooms", "users"
 end
