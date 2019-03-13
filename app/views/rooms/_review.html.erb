@@ -6,7 +6,7 @@
       <span class="star filled_star"></span>
     <% end %>
     <% (room.review_points.max - room.stars).times do %>
-        <span class="star empty_star"></span>
+      <span class="star empty_star"></span>
     <% end %>
     <%= t '.stats', count: room.total_reviews %>
   <% end %>

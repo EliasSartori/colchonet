@@ -9,8 +9,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-    room_model = Room.friendly.find(params[:id])
-    @room = RoomPresenter.new(room_model, self)
+    @room = Room.friendly.find(params[:id])
   end
 
   def new
@@ -48,9 +47,7 @@ class RoomsController < ApplicationController
   end
 
   private
-    def room_params
-      params.
-        require(:room).
-        permit(:title, :location, :description, :picture)
-    end
+  def room_params
+    params.require(:room).permit(:title, :location, :description, :picture)
+  end
 end

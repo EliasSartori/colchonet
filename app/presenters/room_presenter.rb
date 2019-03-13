@@ -6,7 +6,7 @@ class RoomPresenter
     Room.model_name
   end
 
-  def initialize(room, context, show_form=true)
+  def initialize(room, context, show_form)
     @context = context
     @room = room
     @show_form = show_form

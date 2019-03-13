@@ -27,8 +27,10 @@ header {
   height: $header-height;
   background-color: #9ECE71;
   h1 {
+    margin-top: 1%;
     float: left;
     a {
+      text-decoration: none;
       color: #333;
       font-family: $serif-families;
       font-weight: 400;
@@ -56,6 +58,7 @@ header nav {
     border-radius: 5px;
     vertical-align: middle;
     a {
+      text-decoration: none;
       display: block;
       font-size: 12px;
       font-weight: 600;
@@ -71,13 +74,25 @@ header nav {
   h1 {
     font-size: 1.5em;
   }
-  a,
-  a:visited,
+  a:link {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: #000;
+  }
+  
   a:hover {
-    color: #242;
-    &:hover {
-      text-decoration: underline;
-    }
+    text-decoration: underline;
+    color: #000;
+  }
+  
+  a:active {
+    text-decoration: underline;
+    color: #000;
   }
   ul,
   form,
@@ -164,8 +179,8 @@ form {
 
 .room {
   background-color: white;
-  padding: 20px 25px;
-  margin-top: 10px;
+  padding: 25px 50px 25px 50px;
+  margin-top: 5%;
   @include shadow(#ccc, 0, 3px, 6px);
 }
 .room h2 {
@@ -181,4 +196,9 @@ form {
   background-color: #fff;
   border: 1px solid #ccc;
   @include shadow(#ccc, 0, 3px, 6px);
+}
+.top-bar {
+  margin-top: 3%;
+  font-family: "Pacifico", "Georgia", serif;
+  font-size: 30px;
 }

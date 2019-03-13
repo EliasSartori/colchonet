@@ -6,7 +6,11 @@ class RoomCollectionPresenter
   end
   def to_ary
     @rooms.map do |room|
-      RoomPresenter.new(room, @context, false)
+      if room.user_id == @context.current_user.id
+        RoomPresenter.new(room, @context, false)
+      else
+        RoomPresenter.new(room, @context, true)
+      end
     end
   end
 end
